@@ -1,0 +1,32 @@
+# WTMP Logger for OpenVPN
+
+This plug-in adds support for logging connections and disconnections
+from OpenVPN to the wtmp file in Unix-like systems.
+
+## Why is this useful?
+
+If this plug-in's in use, you can use the `last` command to check
+the record/log of connections of all the clients in your VPN.
+
+## Build instructions
+
+Just run `make` in the source folder. This should produce a `wtmp.so` file
+in the same directory.
+
+## Using the plug-in
+
+After the plug-in's been built with the instructions above just place it
+where you see fit and modify your OpenVPN configuration like so
+(please note we're using `/usr/lib/openvpn/plugins/wtmp.so` as an example
+path for the plug-in):
+
+```
+(..)
+plugin "/usr/lib/openvpn/plugins/wtmp.so"
+(..)
+```
+
+## License
+
+We're using GPLv3 for our license. Please take a look at the LICENSE
+file for more information.
